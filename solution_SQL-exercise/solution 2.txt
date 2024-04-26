@@ -1,0 +1,6 @@
+select 
+if(g.grade < 8, "NULL", s.name) as fname, g.grade, s.marks
+from students as s
+inner join grades as g
+on (s.marks between g.min_mark and g.max_mark)
+order by g.grade desc, fname, s.marks 
